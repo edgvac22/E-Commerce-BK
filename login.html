@@ -16,16 +16,16 @@
 <body class="text-center">
     
 <main class="form-signin">
-  <form>
+  <form name="login" action="inicio.php" method="post">
     <img class="mb-4" src="img/logo.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Log in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com">
+      <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" name="correo">
       <label for="floatingInput">Correo electrónico</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="contra">
       <label for="floatingPassword">Contraseña</label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
@@ -36,3 +36,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
+
