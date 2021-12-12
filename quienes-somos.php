@@ -34,7 +34,6 @@ if (isset($_SESSION["iniciar_sesion"])) {
         <li><a href="contacto.php" class="nav-link px-2 link-dark">Contacto</a></li>
         <li><a href="quienes-somos.php" class="nav-link px-2 link-secondary">¿Quiénes somos?</a></li>
         <li><a href="productos.php" class="nav-link px-2 link-dark">Productos</a></li>
-        <!-- <li><a href="#" class="nav-link px-2 link-dark">Preguntas frecuentes</a></li> -->
       </ul>
 
       <div class="col-md-3 text-end">
@@ -49,6 +48,21 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </div>
     </header>
   </div>
+
+  <!-- Main text -->
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Burger King</h1>
+        <p class="lead text-muted">Somos una cadena de establecimientos de comida rápida, presente a nivel internacional y especializada principalmente en la elaboración de hamburguesas.</p>
+        <p>
+          <a href="tel:+50760000000" class="btn btn-primary my-2">Llamarnos ahora</a>
+          <a href="productos.php" class="btn btn-secondary my-2">Comprar productos</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <hr class="featurette-divider">
