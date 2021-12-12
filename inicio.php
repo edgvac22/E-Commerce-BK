@@ -73,6 +73,12 @@ if (isset($_SESSION["iniciar_sesion"])) {
     </header>
   </div>
 
+  <footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">&copy; Edgardo - 2021</span>
+  </div>
+</footer>
+
 <?php
 }
 
