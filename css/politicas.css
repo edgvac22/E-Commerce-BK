@@ -1,0 +1,31 @@
+.contenedor {
+    margin-left: 125px;
+    
+}
+
+.contenedor p {
+    text-align: justify;
+    margin-right: 125px;
+}
+
+span {
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        margin-left: 25px;
+        margin-right: 25px;
+        text-align: center;
+    }
+
+    .contenedor p {
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    span {
+        font-size: 16px;
+    }
+}
+    

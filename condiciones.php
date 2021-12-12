@@ -10,12 +10,12 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condiciones</title>
+    <title>Terminos y condiciones</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS Interno + icon + theme color -->
     <link href="css/inicio.css" rel="stylesheet">
-    <link href="css/carusel.css" rel="stylesheet">
+    <link href="css/politicas.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <meta name="theme-color" content="#7952b3">
 </head>
@@ -50,11 +50,31 @@ if (isset($_SESSION["iniciar_sesion"])) {
     </header>
   </div>
 
+  <!-- Text -->
+    <div class="contenedor">
+    <h2>Terminos y condiciones</h2><br>
+    <b><span>¿Cómo obtenemos sus datos personales?</span></b>
+    <p><br>
+    Recogemos sus datos personales en distintas ocasiones:<br><br>
+- Cada vez que usted contacta directamente con nosotros, por ejemplo a través de la webs <a href="https://burgerking.es">www.burgerking.es</a>, <a href="https://burgerkingencasa.es">www.burgerkingencasa.es</a> y <a href="https://bkspain.es">www.bkspain.es</a>  o a través de las líneas de atención telefónica a clientes, para solicitar información sobre nuestros productos y servicios.
+<br>- Cuando usted compra   un producto o servicio (por ejemplo, en Burger King en casa de nuestra web).
+<br>- Cuando usted participa en nuestras campañas de marketing, por ejemplo, rellenando una tarjeta de respuesta o participando en alguna promoción a través de nuestras webs o restaurantes que requiere que usted complete un formulario on-line con sus datos personales.
+<br><br>Los productos y servicios de BURGERKING, así como sus campañas promocionales, están dirigidos y pensados en su mayoría para adultos. En este sentido, solo recogeremos y trataremos sus datos personales si usted tiene, al menos, 14 años. BURGERKING se reserva la posibilidad de realizar verificaciones de la edad de las personas que le facilitan datos personales. Cualquier dato de un menor de 14 años, será eliminado.
+<br><br>Le agradeceríamos que nos ayudase a mantener actualizados sus datos personales informándonos de cualquier cambio en sus datos de contacto o sus preferencias.
+    </p>
+<br>
+    <b><span>¿Qué información podemos obtener sobre usted?</span></b><br>
+    <br><p>A través de los distintos servicios y canales de contacto descritos en esta Política de Privacidad, se pueden recabar los siguientes tipos de datos acerca de usted:-Datos de Contacto: nombre, dirección, números de teléfono, correo electrónico.
+Preferencias: información que usted nos facilite acerca de sus preferencias, por ejemplo, el tipo de productos.
+Uso de la web y de las comunicaciones: cómo utiliza nuestra web; si abre o reenvía nuestros mensajes; así como la información recabada por medio de cookies y otras tecnologías de rastreo.</p>
+    </div>
+    
+
   <!-- Footer -->
   <hr class="featurette-divider">
     <footer class="container">
-    <p class="float-end"><a href="inicio.php">Regresar al inicio</a></p>
-    <p>&copy; Edgardo Vaca - 2021 &middot; <a href="politicas.php">Políticas</a> &middot; <a href="condiciones.php">Condiciones</a></p>
+    <p class="float-end"><a href="inicio.php">Inicio</a></p>
+    <p>&copy; Edgardo - 2021 &middot; <a href="politicas.php">Políticas</a> &middot; <a href="condiciones.php">Condiciones</a></p>
   </footer>
 <?php
 }
