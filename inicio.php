@@ -87,7 +87,7 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <div class="carousel-inner">
       <div class="carousel-item active">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <img src="https://wallpaperaccess.com/full/2276817.jpg" alt="Background first">
+        <img src="img/bk-1.jpg" alt="Background first">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Las mejores hamburguesas</h1>
@@ -98,7 +98,7 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </div>
       <div class="carousel-item">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <img src="https://i.pinimg.com/originals/8d/ab/2c/8dab2ccfd0d3573d36a2764357b3d467.jpg" alt="Background 2nd">
+        <img src="img/bk-2.jpg" alt="Background 2nd">
         <div class="container">
           <div class="carousel-caption">
             <h1>¿Quiéres contactarnos?</h1>
@@ -109,7 +109,7 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </div>
       <div class="carousel-item">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <img src="https://miro.medium.com/max/1838/1*nyU2IcNL3TVxZ_GPkkmt2g.png" alt="background third">
+        <img src="img/bk-3.png" alt="background third">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>¿Quieres ver actualizaciones de tu pedido?</h1>
@@ -136,25 +136,23 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2>Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <img src="img/compras-online.png" alt="Envío gratis" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2>Compras Online</h2>
+        <p>Podrás comprar cualquier comida desde tu casa u oficina. En tan solo pocos pasos, ya podrá tener su pedido listo.</p>
+        <p><a class="btn btn-secondary" href="productos.php">Ver más detalles &raquo;</a></p>
+      </div>
+      
+      <div class="col-lg-4">
+      <img src="img/delivery.png" alt="Envío gratis" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2>Envío gratis</h2>
+        <p>Una vez procesado su pedido, procederemos a realizarle la entrega. Solo tendrá que pagar por su comida.</p>
+        <p><a class="btn btn-secondary" href="productos.php">Ver más detalles &raquo;</a></p>
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2>Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2>Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <img src="img/garantia.png" alt="Garantia" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2>Garantía</h2>
+        <p>Todas nuestras comidas están hechas por los mejores chefs, y al mejor precio del mercado. ¿Qué estas esperando?</p>
+        <p><a class="btn btn-secondary" href="productos.php">Ver más detalles &raquo;</a></p>
       </div>
     </div>
 
@@ -162,7 +160,7 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <hr class="featurette-divider">
     <footer class="container">
     <p class="float-end"><a href="inicio.php">Regresar al inicio</a></p>
-    <p>&copy; Edgardo Vaca - 2021 &middot; <a href="#">Políticas</a> &middot; <a href="#">Condiciones</a></p>
+    <p>&copy; Edgardo Vaca - 2021 &middot; <a href="politicas.php">Políticas</a> &middot; <a href="condiciones.php">Condiciones</a></p>
   </footer>
 </main>
 
