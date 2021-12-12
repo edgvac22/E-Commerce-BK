@@ -83,34 +83,34 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <div class="carousel-inner">
       <div class="carousel-item active">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <img src="https://wallpaperaccess.com/full/2276817.jpg" alt="Background first">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1>Las mejores hamburguesas</h1>
+            <p>Encuentra una gran variedad en un solo lugar y al mejor precio.</p>
+            <p><a class="btn btn-lg btn-primary" href="productos.php">Ver productos</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <img src="https://i.pinimg.com/originals/8d/ab/2c/8dab2ccfd0d3573d36a2764357b3d467.jpg" alt="Background 2nd">
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1>¿Quiéres contactarnos?</h1>
+            <p>Nada es tan fácil, como enviarnos un mensaje, solo dale click al botón.</p>
+            <p><a class="btn btn-lg btn-primary" href="contacto.php">Contáctanos</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <img src="https://miro.medium.com/max/1838/1*nyU2IcNL3TVxZ_GPkkmt2g.png" alt="background third">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>¿Quieres ver actualizaciones de tu pedido?</h1>
+            <p>Ahora con la nueva funcionalidad, podrás verlo de una manera muy sencilla.</p>
+            <p><a class="btn btn-lg btn-primary" href="mi-cuenta.php">Click Aquí</a></p>
           </div>
         </div>
       </div>
