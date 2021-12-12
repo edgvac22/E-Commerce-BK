@@ -30,8 +30,8 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="inicio.php" class="nav-link px-2 link-secondary">Inicio</a></li>
-        <li><a href="contacto.php" class="nav-link px-2 link-dark">Contacto</a></li>
+        <li><a href="inicio.php" class="nav-link px-2 link-dark">Inicio</a></li>
+        <li><a href="contacto.php" class="nav-link px-2 link-secondary">Contacto</a></li>
         <li><a href="quienes-somos.php" class="nav-link px-2 link-dark">¿Quiénes somos?</a></li>
         <li><a href="productos.php" class="nav-link px-2 link-dark">Productos</a></li>
         <!-- <li><a href="#" class="nav-link px-2 link-dark">Preguntas frecuentes</a></li> -->
