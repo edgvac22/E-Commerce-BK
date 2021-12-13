@@ -65,13 +65,23 @@ if (isset($_SESSION["iniciar_sesion"])) {
 
     if($get_productos) {
         for($i = 0; $i < 4; $i++) {
-                     print($get_productos[$i]['nombre']);
-                     print($get_productos[$i]['codigo']);
-                     print($get_productos[$i]['imagen']);
-                     print($get_productos[$i]['precio']);
-                     print("<br><br>"); 
-                       
-             }
+                     $nombre = $get_productos[$i]['nombre'];
+                     $codigo = $get_productos[$i]['codigo'];
+                     $imagen = $get_productos[$i]['imagen'];
+                     $precio = $get_productos[$i]['precio'];
+                     print("<br><br>");   
+                     ?>
+                     <html>
+                     <div class="card" style="width: 18rem;">
+                     <img src="<?php echo $imagen?>" class="card-img-top" alt="...">
+                     <div class="card-body">
+                         <h5 class="card-title"><?php echo $nombre ?></h5><br>
+                         <p class="card-text">Precio: B/.<?php echo $precio ?><br>Código: <?php echo $codigo?></p>
+                         <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                        </div>
+                    </div>
+                    </html>
+             <?php }
     }
 
     ?>
