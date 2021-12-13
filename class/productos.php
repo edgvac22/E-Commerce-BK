@@ -23,6 +23,21 @@ public function traer_productos(){
     }
 }
 
+public function contar_productos(){
+    
+    $instruccion = "CALL sp_contar_productos";
+
+    $consulta=$this->_db->query($instruccion);
+    $resultado=$consulta->fetch_all(MYSQLI_ASSOC);
+
+    if($resultado){
+
+        return $resultado;
+        $resultado->close();
+        $this->_db->close();
+    }
+}
+
 }
 
 ?>

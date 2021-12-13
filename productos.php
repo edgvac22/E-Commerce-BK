@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once("class/productos.php");
 
 if (isset($_SESSION["iniciar_sesion"])) {
 ?>
@@ -51,7 +52,29 @@ if (isset($_SESSION["iniciar_sesion"])) {
 
     <!-- Traer productos -->
 
+    <?php
+
+    $obj_productos = new productos();
+    $get_productos = $obj_productos->traer_productos();
     
+    $obj_producto = new productos();
+    $cantidad_productos = $obj_producto->contar_productos();
+    $total_produc = $cantidad_productos[0]['count(*)'];
+    
+    // Cards + Array
+
+    if($get_productos) {
+        for($i = 0; $i < 4; $i++) {
+                     print($get_productos[$i]['nombre']);
+                     print($get_productos[$i]['codigo']);
+                     print($get_productos[$i]['imagen']);
+                     print($get_productos[$i]['precio']);
+                     print("<br><br>"); 
+                       
+             }
+    }
+
+    ?>
 
   <!-- Footer -->
   <hr class="featurette-divider">
