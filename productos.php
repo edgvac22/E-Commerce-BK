@@ -16,6 +16,7 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS Interno + icon + theme color -->
     <link href="css/inicio.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <meta name="theme-color" content="#7952b3">
 </head>
@@ -64,14 +65,16 @@ if (isset($_SESSION["iniciar_sesion"])) {
     // Cards + Array
 
     if($get_productos) {
-        for($i = 0; $i < 4; $i++) {
+        for($i = 0; $i < $total_produc; $i++) {
                      $nombre = $get_productos[$i]['nombre'];
                      $codigo = $get_productos[$i]['codigo'];
                      $imagen = $get_productos[$i]['imagen'];
                      $precio = $get_productos[$i]['precio'];
-                     print("<br><br>");   
+                     print("<br>\n");
                      ?>
                      <html>
+                     <div class="row">
+                    <div class="col-sm-4">    
                      <div class="card" style="width: 18rem;">
                      <img src="<?php echo $imagen?>" class="card-img-top" alt="...">
                      <div class="card-body">
@@ -79,6 +82,8 @@ if (isset($_SESSION["iniciar_sesion"])) {
                          <p class="card-text">Precio: B/.<?php echo $precio ?><br>Código: <?php echo $codigo?></p>
                          <a href="#" class="btn btn-primary">Añadir al carrito</a>
                         </div>
+                    </div>
+                    </div>
                     </div>
                     </html>
              <?php }

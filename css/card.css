@@ -1,0 +1,10 @@
+.card {
+    margin-left: 75px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-left: 50px;
+        text-align: center;
+    }
+  }
