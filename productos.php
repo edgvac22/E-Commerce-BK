@@ -61,35 +61,31 @@ if (isset($_SESSION["iniciar_sesion"])) {
     $obj_producto = new productos();
     $cantidad_productos = $obj_producto->contar_productos();
     $total_produc = $cantidad_productos[0]['count(*)'];
-    
-    // Cards + Array
-
-    if($get_productos) {
-        for($i = 0; $i < $total_produc; $i++) {
-                     $nombre = $get_productos[$i]['nombre'];
-                     $codigo = $get_productos[$i]['codigo'];
-                     $imagen = $get_productos[$i]['imagen'];
-                     $precio = $get_productos[$i]['precio'];
-                     print("<br>\n");
-                     ?>
-                     <html>
-                     <div class="row">
-                    <div class="col-sm-4">    
-                     <div class="card" style="width: 18rem;">
-                     <img src="<?php echo $imagen?>" class="card-img-top" alt="...">
-                     <div class="card-body">
-                         <h5 class="card-title"><?php echo $nombre ?></h5><br>
-                         <p class="card-text">Precio: B/.<?php echo $precio ?><br>Código: <?php echo $codigo?></p>
-                         <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    </html>
-             <?php }
-    }
-
     ?>
+    <!--  Cards + Array -->
+
+
+
+        
+                                <div class="row">
+                                <?php foreach($get_productos as $value) {  ?>
+                                <div class="col-sm-4">    
+                                
+
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="<?php echo $value['imagen']?>" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo $value['nombre'] ?></h5><br>
+                                            <p class="card-text">Precio: B/.<?php echo $value['precio'] ?><br>Código: <?php echo $value['codigo']?></p>
+                                            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                                        </div> 
+                                    </div>
+                                </div>
+            
+                                <?php  } ?>
+                                </div>
+                                
+                               
 
   <!-- Footer -->
   <hr class="featurette-divider">
