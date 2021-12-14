@@ -60,8 +60,10 @@ if(!empty($_GET["action"])) {
                 $obj_productos = new productos();
                 $get_especifico_producto = $obj_productos->especifico_producto($_GET["codigo"]);
 
-                print_r($get_especifico_producto);
-		        
+                
+
+                $itemArray = array($get_especifico_producto[0]['codigo']=>array('nombre'=>$get_especifico_producto[0]['nombre'], 'codigo'=>$get_especifico_producto[0]['codigo'], 'cantidad'=>$_POST["cantidad"], 'precio'=>$get_especifico_producto[0]['precio'], 'imagen'=>$get_especifico_producto[0]['imagen']));
+		        print_r($itemArray);
         }
     }
 }
