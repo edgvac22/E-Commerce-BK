@@ -64,29 +64,23 @@ if (isset($_SESSION["iniciar_sesion"])) {
     ?>
     <!--  Cards + Array -->
 
-
-
-        
                                 <div class="row">
                                 <?php foreach($get_productos as $value) {  ?>
                                 <div class="col-sm-4">    
                                 
-
                                     <div class="card" style="width: 18rem;">
-                                        <img src="<?php echo $value['imagen']?>" class="card-img-top" alt="...">
+                                        <img src="<?php echo $value['imagen']?>" class="card-img-top" alt="<?php echo $value['alt']?>">
                                         <div class="card-body">
                                             <h5 class="card-title"><?php echo $value['nombre'] ?></h5><br>
                                             <p class="card-text">Precio: B/.<?php echo $value['precio'] ?><br>Código: <?php echo $value['codigo']?></p>
-                                            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                                            <a href="cart.php" class="btn btn-primary">Añadir al carrito</a>
                                         </div> 
                                     </div>
                                 </div>
-            
+
                                 <?php  } ?>
                                 </div>
-                                
-                               
-
+      
   <!-- Footer -->
   <hr class="featurette-divider">
     <footer class="container">
