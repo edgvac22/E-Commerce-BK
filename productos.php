@@ -19,6 +19,12 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <link href="css/card.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <meta name="theme-color" content="#7952b3">
+
+    <style>
+        .row>* {
+            margin-bottom: 25px;
+    }
+    </style>
 </head>
 <body>
 
@@ -66,6 +72,7 @@ if (isset($_SESSION["iniciar_sesion"])) {
 
                                 <div class="row">
                                 <?php foreach($get_productos as $value) {  ?>
+                                    <form method="post" action="cart.php?action=añadir&codigo=<?php echo $value['codigo']; ?>">
                                 <div class="col-sm-4">    
                                 
                                     <div class="card" style="width: 18rem;">
@@ -73,11 +80,16 @@ if (isset($_SESSION["iniciar_sesion"])) {
                                         <div class="card-body">
                                             <h5 class="card-title"><?php echo $value['nombre'] ?></h5><br>
                                             <p class="card-text">Precio: B/.<?php echo $value['precio'] ?><br>Código: <?php echo $value['codigo']?></p>
-                                            <a href="cart.php" class="btn btn-primary">Añadir al carrito</a>
+                                            <div class="container">
+                                            <input type="text" name="cantidad" value="1" size="1" />
+                                            <input type="submit" value="Añadir al carrito" name="enviar" class="btn btn-primary"></input>
+                                            </div>
+                                            
                                         </div> 
                                     </div>
                                 </div>
-
+                                </form>
+                                
                                 <?php  } ?>
                                 </div>
       

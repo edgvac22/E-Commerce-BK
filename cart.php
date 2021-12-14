@@ -49,6 +49,25 @@ if (isset($_SESSION["iniciar_sesion"])) {
     </header>
   </div>
 
+  <!-- Cart -->
+<?php
+
+if(!empty($_GET["action"])) {
+    switch($_GET["action"]) {
+        case "añadir":
+            if(!empty($_POST["cantidad"])) {
+                require_once("class/productos.php");
+                $obj_productos = new productos();
+                $get_especifico_producto = $obj_productos->especifico_producto($_GET["codigo"]);
+
+                print_r($get_especifico_producto);
+		        
+        }
+    }
+}
+    
+    ?>	
+
   <!-- Footer -->
   <hr class="featurette-divider">
     <footer class="container">
