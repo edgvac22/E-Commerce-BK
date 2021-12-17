@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-require_once("class/productos.php");
 
 if (isset($_SESSION["iniciar_sesion"])) {
 ?>
@@ -11,20 +10,13 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Checkout</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS Interno + icon + theme color -->
     <link href="css/inicio.css" rel="stylesheet">
-    <link href="css/card.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <meta name="theme-color" content="#7952b3">
-
-    <style>
-        .row>* {
-            margin-bottom: 25px;
-    }
-    </style>
 </head>
 <body>
 
@@ -40,13 +32,13 @@ if (isset($_SESSION["iniciar_sesion"])) {
         <li><a href="inicio.php" class="nav-link px-2 link-dark">Inicio</a></li>
         <li><a href="contacto.php" class="nav-link px-2 link-dark">Contacto</a></li>
         <li><a href="quienes-somos.php" class="nav-link px-2 link-dark">¿Quiénes somos?</a></li>
-        <li><a href="productos.php" class="nav-link px-2 link-secondary">Productos</a></li>
+        <li><a href="productos.php" class="nav-link px-2 link-dark">Productos</a></li>
         <!-- <li><a href="#" class="nav-link px-2 link-dark">Preguntas frecuentes</a></li> -->
       </ul>
 
       <div class="col-md-3 text-end">
-      <a href="logout.php">
-        <button type="button" class="btn btn-outline-primary me-2">Cerrar sesión</button>
+      <a href="mi-cuenta.php">
+        <button type="button" class="btn btn-outline-primary me-2">Mi cuenta</button>
       </a>  
       
       <a href="cart.php">
@@ -57,43 +49,6 @@ if (isset($_SESSION["iniciar_sesion"])) {
     </header>
   </div>
 
-    <!-- Traer productos -->
-
-    <?php
-
-    $obj_productos = new productos();
-    $get_productos = $obj_productos->traer_productos();
-    
-    $obj_producto = new productos();
-    $cantidad_productos = $obj_producto->contar_productos();
-    $total_produc = $cantidad_productos[0]['count(*)'];
-    ?>
-    <!--  Cards + Array -->
-
-                                <div class="row">
-                                <?php foreach($get_productos as $value) {  ?>
-                                    
-                                <div class="col-sm-4">    
-                                
-                                    <div class="card" style="width: 18rem;">
-                                    <form method="post" action="cart.php?action=añadir&codigo=<?php echo $value['codigo']; ?>">
-                                        <img src="<?php echo $value['imagen']?>" class="card-img-top" alt="<?php echo $value['alt']?>"><hr>
-                                        <div class="card-body">
-                                            <h5 class="card-title"><?php echo $value['nombre'] ?></h5><br>
-                                            <p class="card-text">Precio: B/.<?php echo $value['precio'] ?><br>Código: <?php echo $value['codigo']?></p>
-                                            <div class="container">
-                                            <input type="text" name="cantidad" value="1" size="1" />
-                                            <input type="submit" value="Añadir al carrito" name="enviar" class="btn btn-primary"></input>
-                                            </div>
-                                            
-                                        </div> 
-                                    </div>
-                                </div>
-                                </form>
-                                
-                                <?php  } ?>
-                                </div>
-      
   <!-- Footer -->
   <hr class="featurette-divider">
     <footer class="container">

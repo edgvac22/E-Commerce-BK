@@ -38,21 +38,6 @@ public function contar_productos(){
     }
 }
 
-public function especifico_producto($codigo){
-    
-    $instruccion = "CALL sp_traer_especifico_producto('".$codigo."')";
-
-    $consulta=$this->_db->query($instruccion);
-    $resultado=$consulta->fetch_all(MYSQLI_ASSOC);
-
-    if($resultado){
-
-        return $resultado;
-        $resultado->close();
-        $this->_db->close();
-    }
-}
-
 }
 
 ?>
