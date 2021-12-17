@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-
 if (isset($_SESSION["iniciar_sesion"])) {
+  $correo = $_COOKIE["correo"];
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,11 @@ if (isset($_SESSION["iniciar_sesion"])) {
     <link href="css/cart.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <meta name="theme-color" content="#7952b3">
+    <style>
+      #btnEmpty {
+        margin-right: 15px;
+      }
+    </style>
 </head>
 <body>
 
@@ -38,8 +44,8 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </ul>
 
       <div class="col-md-3 text-end">
-      <a href="mi-cuenta.php">
-        <button type="button" class="btn btn-outline-primary me-2">Mi cuenta</button>
+      <a href="logout.php">
+        <button type="button" class="btn btn-outline-primary me-2">Cerrar sesión</button>
       </a>  
       
       <a href="cart.php">
@@ -85,7 +91,20 @@ if(!empty($_GET["action"])) {
                   if(!empty($_SESSION["cart_item"])) {
                     foreach($_SESSION["cart_item"] as $k => $v) {
                         if($_GET["code"] == $k)
-                          unset($_SESSION["cart_item"][$k]);				
+                          unset($_SESSION["cart_item"][$k]);
+                          require_once("class/compra.php");
+                          $obj_eliminar = new compra();
+                          $eliminar_compra = $obj_eliminar->eliminar_carrito($correo, $_GET["code"]);
+                          if (is_array($eliminar_compra) || is_object($eliminar_compra)) {
+                            foreach($eliminar_compra as $array_resp){
+                              foreach($array_resp as $value){
+                                $nfilas=$value;
+                              }
+                            }
+                            if($nfilas > 0){
+                              header('Location: cart.php');
+                            }
+                          }
                         if(empty($_SESSION["cart_item"]))
                           unset($_SESSION["cart_item"]);
                     }
@@ -100,8 +119,9 @@ if(!empty($_GET["action"])) {
     
     <div id="shopping-cart">
 <div class="txt-heading">Carrito de compras</div>
-
+<a id="btnEmpty" href="thank-you.php">Proceder con la compra</a>
 <a id="btnEmpty" href="cart.php?action=empty">Vaciar carrito</a>
+
 <?php
 if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
@@ -127,26 +147,67 @@ if(isset($_SESSION["cart_item"])){
 				<td style="text-align:right;"><?php echo $item["cantidad"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ".$item["precio"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-				<td style="text-align:center;"><a href="cart.php?action=remove&code=<?php echo $item["codigo"]; ?>" class="btnRemoveAction"><img src="img/icon-delete.png" alt="Remove Item" /></a></td>
+				<td style="text-align:center;"><a href="cart.php?action=remove&code=<?php echo $item["codigo"]; ?>" class="btnRemoveAction"><img src="img/icon-delete.png" alt="Remove Item" />
+      </a></td>
 				</tr>
 				<?php
 				$total_quantity += $item["cantidad"];
 				$total_price += ($item["precio"]*$item["cantidad"]);
+        $itbms_price = ($total_price*0.07);
+        $total_plusitbms = ($total_price+$itbms_price);
+        require_once("class/compra.php");
+          $obj_compra = new compra();
+          $hacer_compra = $obj_compra->verificar_carrito($correo, $item["codigo"], $item["nombre"], $item["cantidad"]);
 		}
 		?>
-
+<!-- Subtotal -->
 <tr>
-<td colspan="2" align="right">Total:</td>
+<td colspan="2" align="right">Subtotal:</td>
 <td align="right"><?php echo $total_quantity; ?></td>
 <td align="right" colspan="2"><strong><?php echo "$ ".number_format($total_price, 2); ?></strong></td>
 <td></td>
 </tr>
+<!-- Itbms -->
+<tr>
+<td colspan="2" align="right">Itbms:</td>
+<td align="right"><?php echo "7%"; ?></td>
+<td align="right" colspan="2"><strong><?php echo "$ ".number_format($itbms_price, 2); ?></strong></td>
+<td></td>
+</tr>
+<!-- Total -->
+<tr>
+<td colspan="2" align="right">Total:</td>
+<td align="right"></td>
+<td align="right" colspan="2"><strong><?php echo "$ ".number_format($total_plusitbms, 2); ?></strong></td>
+<td></td>
+</tr>
+
 </tbody>
-</table>		
+</table>
+
+
   <?php
 } else {
 ?>
-<div class="no-records">Tu carrito está vacío</div>
+
+<section class="py-4 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Su carrito está vacío</h1>
+        <p class="lead text-muted">En la sección de productos encontrará una gran variedad de nuestro catalogo.</p>
+        <p>
+          <a href="productos.php" class="btn btn-primary my-2">Ver productos</a>
+
+        </p>
+      </div>
+    </div>
+  </section>
+
+<style>
+  #btnEmpty {
+    visibility: hidden;
+  }
+</style>
 <?php 
 }
 ?>

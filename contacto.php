@@ -37,8 +37,8 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </ul>
 
       <div class="col-md-3 text-end">
-      <a href="mi-cuenta.php">
-        <button type="button" class="btn btn-outline-primary me-2">Mi cuenta</button>
+      <a href="logout.php">
+        <button type="button" class="btn btn-outline-primary me-2">Cerrar sesión</button>
       </a>  
       
       <a href="cart.php">

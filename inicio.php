@@ -4,7 +4,7 @@ session_start();
 if(isset($_REQUEST['correo']) && isset($_REQUEST['contra'])) {
     $correo = $_REQUEST['correo'];
     $contra = $_REQUEST['contra'];
-    
+    setcookie("correo", $correo, time() + 3600);
     $salt = substr($correo, 0,2);
     $clave_crypt = crypt ($contra, $salt);
 
@@ -23,6 +23,8 @@ if(isset($_REQUEST['correo']) && isset($_REQUEST['contra'])) {
         $iniciar_sesion = $correo;
         $_SESSION["iniciar_sesion"] = $iniciar_sesion;
     }
+
+    
 }
 ?>
 <!DOCTYPE html>
@@ -62,8 +64,8 @@ if (isset($_SESSION["iniciar_sesion"])) {
       </ul>
 
       <div class="col-md-3 text-end">
-      <a href="mi-cuenta.php">
-        <button type="button" class="btn btn-outline-primary me-2">Mi cuenta</button>
+      <a href="logout.php">
+        <button type="button" class="btn btn-outline-primary me-2">Cerrar sesión</button>
       </a>  
       
       <a href="cart.php">
