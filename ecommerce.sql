@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2021 a las 17:40:29
+-- Tiempo de generación: 18-12-2021 a las 01:44:14
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 7.4.22
 
@@ -73,6 +73,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registro` (`param_nombre` VARCHA
 insert into usuarios(nombre,correo,contraseña) VALUES(param_nombre, param_correo, param_contra);
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_traer_especifico_producto` (`param_codigo` VARCHAR(250))  BEGIN
+
+set @s = CONCAT("select * from productos where codigo = '", param_codigo ,"'");
+    
+    prepare stmt from @s;
+    execute stmt;
+    deallocate prepare stmt;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_traer_productos` ()  BEGIN
     
     set @s = CONCAT("select * from productos");
@@ -116,7 +125,8 @@ CREATE TABLE `carrito` (
 --
 
 INSERT INTO `carrito` (`id`, `correo`, `codigo`, `nombre_producto`, `cantidad`) VALUES
-(127, 'testuser@gmail.com', 'BK02', 'Big King', 6);
+(129, 'testuser@gmail.com', 'BK02', 'Big King', 1),
+(130, 'testuser@gmail.com', 'BK03', 'Whopper', 5);
 
 -- --------------------------------------------------------
 
@@ -191,7 +201,8 @@ INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contraseña`) VALUES
 (28, 'jai', 'jai@gmail.com', 'jai123'),
 (29, 'Alana Cardona mi bebbe favorita', 'alanacb@gmail.com', 'alqKvBVotpsig'),
 (30, 'axd1', 'axd1@gmail.com', 'axlRvgYxDGQ7s'),
-(31, 'Profe', 'profe@gmail.com', 'proovpMGgCAy.');
+(31, 'Profe', 'profe@gmail.com', 'proovpMGgCAy.'),
+(32, 'cuenta1', 'cuenta1@gmail.com', 'cuaXIAeUDSDC2');
 
 --
 -- Índices para tablas volcadas
@@ -223,7 +234,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -235,7 +246,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
